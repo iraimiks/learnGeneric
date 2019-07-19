@@ -13,35 +13,30 @@ public class Sorter<E extends Storage> {
     }
 
     public E[] sort(E[] data) {
-       int N = data.length;
-       for(int i=0;i<=N;i++){
-           int min = i;
-           for(int j=i+1;j<N;j++){
-               if(less(data[j],data[min])){
-                   min=j;
-               }
-               exch(data,i,min);
-           }
-       }
-       return data;
-    }
-
-
-
-    private static boolean less(Storage a,Storage b){
-        return a.getType().compareTo(b.type)>0;
-    }
-    private static void exch(Comparable[] a,int i, int j){
-        Comparable t = a[i]; a[i]=a[j];a[j]=t;
-    }
-    public void show(Storage[] a){
-        for(int i=0;i<a.length;i++){
-            System.out.print(a[i]+ " ");
+        int N = data.length;
+        for (int i = 0; i <= N; i++) {
+            int min = i;
+            for (int j = i + 1; j < N; j++) {
+                if (less(data[j], data[min])) {
+                    min = j;
+                }
+                exch(data, i, min);
+            }
         }
-        System.out.println();
+        return data;
     }
 
 
+    private static boolean less(Storage elementOne, Storage elementTwo) {
+
+        return elementOne.getType().compareTo(elementTwo.type) > 0;
+    }
+
+    private static void exch(Comparable[] a, int i, int j) {
+        Comparable t = a[i];
+        a[i] = a[j];
+        a[j] = t;
+    }
 
 
 }

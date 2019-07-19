@@ -19,21 +19,17 @@ public class Starter {
         final Sorter<Storage> sorter = new Sorter<>(data);
         final Iterator<Storage> iterator = new Iterator<>(sorter.sort(data));
         try {
-            while (!iterator.hasNext()){
-                System.out.println(iterator.next());
+            while (!iterator.hasNext()) {
+                System.out.println(iterator.next().toString());
             }
-        }catch (ArrayIndexOutOfBoundsException ex){
-
+        } catch (ArrayIndexOutOfBoundsException ex) {
+                ex.printStackTrace();
         }
 
-//
-//
-//        while (iterator.hasNext()) {
-//            final Storage storage = iterator.next();
-//            System.out.println("| id " + storage.getId() + " | type " + storage.getType() + " | " + storage.getSize());
-//        }
-        // sorter.sort(data);
-      //  sorter.show(data);
+        while (iterator.hasNext()) {
+            final Storage storage = iterator.next();
+            System.out.println("| id " + storage.getId() + " | type " + storage.getType() + " | " + storage.getSize());
+        }
     }
 
 
