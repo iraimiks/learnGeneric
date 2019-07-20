@@ -1,7 +1,5 @@
 package teamcalypso;
 
-import java.util.ArrayList;
-
 public class Starter {
     private static Storage[] data = new Storage[]{
             new Storage(1, "int", 10),
@@ -22,8 +20,8 @@ public class Starter {
             while (!iterator.hasNext()) {
                 System.out.println(iterator.next().toString());
             }
-        } catch (ArrayIndexOutOfBoundsException ex) {
-                ex.printStackTrace();
+        } catch (Throwable ex) {
+            ex.printStackTrace();
         }
 
         while (iterator.hasNext()) {

@@ -1,6 +1,5 @@
 package teamcalypso;
 
-import java.util.Arrays;
 
 public class Storage implements Comparable<Storage> {
     int id;

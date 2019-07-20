@@ -1,20 +1,26 @@
 package teamcalypso;
 
-
-
 public class Iterator<E extends Storage> {
     private E[] elementData;
-    private int size;
     private int currentIndex = 0;
+
     public Iterator(E[] data) {
-       this.elementData = data;
-       this.size = 0;
+        this.elementData = data;
     }
+
     public boolean hasNext() {
-        return currentIndex<size&&elementData[currentIndex]!=null;
+        if (currentIndex < elementData.length) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public E next() {
-        return elementData[currentIndex++];
+        if (hasNext()) {
+            return elementData[currentIndex++];
+        } else {
+            return null;
+        }
     }
 }

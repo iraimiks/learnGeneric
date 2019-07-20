@@ -27,9 +27,11 @@ public class IteratorTest {
 
     @Test
     public void testMultipleData() {
-        final Storage[] storage = new Storage[]{new Storage(1, "Test 1", 1), new Storage(2, "Test 2", 2)};
-        iterator = new Iterator<>(storage);
+        final Storage[] storage = new Storage[]{
+                new Storage(1, "Test 1", 1),
+                new Storage(2, "Test 2", 2)};
 
+        iterator = new Iterator<>(storage);
         assertTrue(iterator.hasNext());
         assertSame(storage[0],iterator.next());
         assertTrue(iterator.hasNext());

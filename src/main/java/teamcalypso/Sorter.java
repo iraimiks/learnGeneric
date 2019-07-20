@@ -1,11 +1,7 @@
 package teamcalypso;
 
-import javax.lang.model.element.Element;
-import java.util.Collections;
-
 public class Sorter<E extends Storage> {
     private E[] element;
-    //TODO implement logic for this class to sort items by count descending and type ascending (in case some of items is with the same count)
 
     public Sorter(E[] data) {
 
@@ -26,9 +22,7 @@ public class Sorter<E extends Storage> {
         return data;
     }
 
-
     private static boolean less(Storage elementOne, Storage elementTwo) {
-
         return elementOne.getType().compareTo(elementTwo.type) > 0;
     }
 
